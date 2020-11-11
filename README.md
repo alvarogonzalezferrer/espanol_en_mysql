@@ -56,6 +56,19 @@ Vi muchas propuestas para resolver este problema, en foros y páginas de consult
 
 En realidad, las soluciones de los foros son algo incorrecto, no es necesario hacer semejante rodeo manual (que pasa si tenemos una base de datos con millones de registros? los vamos a revisar uno a uno con la tablita del foro?) para poder adecuar nuestros datos.
 
+### Nota IMPORTANTE
+
+Este documento apunta especialmente a bases de datos que trabajan con datos en español, si queremos usar otros caracteres, por ejemplo de idiomas como japonés, hebreo, árabe, etc debemos cambiar la configuración adecuadamente. Si debemos trabajar con muchos lenguajes combinados a la vez (por ejemplo un sistema global o universal), debemos apuntar a usar todo el sistema (PHP, MySQL, etc) con **utf8mb4**.
+
+### Más información
+
+* https://en.wikipedia.org/wiki/UTF-8
+* https://en.wikipedia.org/wiki/Comparison_of_Unicode_encodings#In_detail
+* https://en.wikipedia.org/wiki/ISO/IEC_8859-1 <-- **el infame latin1**
+* https://en.wikipedia.org/wiki/Mojibake <-- este es el problema que sufrimos al usar latin1 cuando debimos usar utf8
+* https://en.wikipedia.org/wiki/Windows-1252 <-- es bueno conocerlo
+* https://balusc.omnifaces.org/2009/05/unicode-how-to-get-characters-right.html 
+
 ## Pasos a realizar
 
 1. Hacer **copia de seguridad** de los datos originales, un "dump" de toda la base de datos. Esto es lo MÁS IMPORTANTE, hacer backup y NO hacer experimentos en bases de datos de producción.
