@@ -60,14 +60,20 @@ En realidad, las soluciones de los foros son algo incorrecto, no es necesario ha
 
 Este documento apunta especialmente a bases de datos que trabajan con datos en español, si queremos usar otros caracteres, por ejemplo de idiomas como japonés, hebreo, árabe, etc debemos cambiar la configuración adecuadamente. Si debemos trabajar con muchos lenguajes combinados a la vez (por ejemplo un sistema global o universal), debemos apuntar a usar todo el sistema (PHP, MySQL, etc) con **utf8mb4**.
 
+Latin1 charset (iso-8859) es 100% compatible para ser almacenado en un almacén de datos utf8. Todos los caracteres ascii y extended-ascii se almacenarán como de un solo byte.
+
+Yendo del otro lado, de utf8 a Latin1 charset puede o no funcionar. Si hay caracteres de 2 bytes (caracteres más allá de 255 de ascii extendida), no se almacenarán en un almacén de datos de Latin1, <- *ESTE ES EL PROBLEMA QUE NORMALMENTE SUFREN LOS SISTEMAS EN ESPAÑOL*.
+
 ### Más información
+
+Para no repetir toda la información sobre que es UTF8, que es Latin1, la codificación de carácteres internacionales, etc, les dejo algunos links interesantes.
 
 * https://en.wikipedia.org/wiki/UTF-8
 * https://en.wikipedia.org/wiki/Comparison_of_Unicode_encodings#In_detail
 * https://en.wikipedia.org/wiki/ISO/IEC_8859-1 <-- **el infame latin1**
 * https://en.wikipedia.org/wiki/Mojibake <-- este es el problema que sufrimos al usar latin1 cuando debimos usar utf8
 * https://en.wikipedia.org/wiki/Windows-1252 <-- es bueno conocerlo
-* https://balusc.omnifaces.org/2009/05/unicode-how-to-get-characters-right.html 
+* https://balusc.omnifaces.org/2009/05/unicode-how-to-get-characters-right.html
 
 ## Pasos a realizar
 
