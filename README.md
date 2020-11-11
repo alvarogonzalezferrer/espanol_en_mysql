@@ -117,7 +117,11 @@ Por ejemplo en Notepad++ elegimos *Codificación > UTF-8 sin BOM* y salvamos. Es
 
 6. Y lo mas complejo, **CONVERTIR los datos corruptos de nuestra base de datos a UTF-8**
 
-Aquí es donde los "trucos" que encontré en foros hacen agua, o se vuelven extremadamente complicados, y propensos a fallar y corromper todavía más los datos, así que les presento esta solución mas elegante. Muchos *"programadores"* proponen casi manualmente revisar dato por dato con una tablita de conversión los caracteres incorrectos, una idea implausible si estamos trabajando con una base de datos corporativa con millones de registros... Otra idea incorrecta es solo aplicar la configuración de la base de datos a UTF8, esto solo sirve si la base esta vacía, pero nuevamente ¿y si tengo millones de datos ya cargados incorrectamente?
+Aquí es donde los "trucos" que encontré en foros hacen agua, o se vuelven extremadamente complicados, y propensos a fallar y corromper todavía más los datos, así que les presento esta solución mas elegante.
+
+Muchos *"programadores"* proponen casi manualmente revisar dato por dato con una tablita de conversión los caracteres incorrectos, una idea implausible si estamos trabajando con una base de datos corporativa con millones de registros...
+
+Otra idea *incorrecta* es solo aplicar la configuración de la base de datos a UTF8, esto solo sirve si la base esta vacía, pero nuevamente ¿y si tengo millones de datos ya cargados incorrectamente?
 
 La manera sencilla y automática es utilizar el mismo poder de MySQL, usando la función *CONVERT*, que permite conversiones entre *charsets*.
 
