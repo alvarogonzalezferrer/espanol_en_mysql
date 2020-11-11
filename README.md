@@ -77,6 +77,7 @@ En realidad, las soluciones de los foros son algo incorrecto, no es necesario ha
 Hay varias maneras de lograr esto, solo pongo la más compatible incluso con versiones viejas de PHP
 
   ```PHP
+  // usando extensión mysqli (mysql improved) permite acceder a la funcionalidad proporcionada por MySQL 4.1 y posterior
   // conecto al server mysql
   $mysqli = new mysqli("localhost", "mi_usuario", "mi_clave", "test");
 
@@ -90,7 +91,8 @@ Hay varias maneras de lograr esto, solo pongo la más compatible incluso con ver
   $mysqli->query("SET NAMES utf8");
   $mysqli->query("SET CHARACTER SET utf8");
 
-  // --- con PDO:
+  // ----------------------------------------
+  // PDO: extensión Objetos de Datos de PHP define una interfaz ligera para poder acceder a bases de datos en PHP.
 
   // solo a partir de PHP 5.3.6
   $pdo = new PDO("mysql:host=localhost;dbname=world;charset=utf8", 'mi_usuario', 'mi_contraseña');
