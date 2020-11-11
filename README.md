@@ -100,9 +100,7 @@ Hay varias maneras de lograr esto, solo pongo la más compatible incluso con ver
   ```PHP
   // usando extensión mysqli (mysql improved) permite acceder a la funcionalidad proporcionada por MySQL 4.1 y posterior
   // conecto al server mysql
-  $mysqli = new mysqli("localhost", "mi_usuario", "mi_clave", "test");
-
-  // recordar verificar si realmente se conecto! acá no lo pongo para ahorrar espacio
+  $mysqli = new mysqli("localhost", "mi_usuario", "mi_clave", "base_de_datos") or die ('No pude conectar a MySQL.' . mysqli_connect_error());
 
   // con Mysqli, método preferido:
   $mysqli->set_charset("utf8");
