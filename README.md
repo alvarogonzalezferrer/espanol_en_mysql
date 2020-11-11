@@ -169,7 +169,9 @@ Opcional pero útil al terminar, ejecutar
   ```
 Se puede hacer para todas las tablas desde la linea de comandos (ingresando el password de root)
 
+```
   $ mysqlcheck -u root -p --auto-repair --optimize --all-databases
+```
 
 Podemos hacer un pequeño programa que lo haga automáticamente para cada columna de texto de cada tabla de nuestra base de datos, de manera de acomodar toda la base de datos automáticamente.
 
