@@ -166,10 +166,10 @@ InnoDB es el motor de almacenamiento predeterminado y más de uso general, y Ora
   ```SQL
   # Para cada tabla
 
-  # No usar en InnoDB, no tiene sentido
+  # No usar en InnoDB, no tiene sentido, solo MyISAM, ARCHIVE o CSV
   REPAIR TABLE tabla;
 
-  # Sirve para InnoDB
+  # Sirve para InnoDB y otros motores
   OPTIMIZE TABLE tabla;
   ```
 Se puede hacer para todas las tablas desde la linea de comandos (ingresando el password de root)
