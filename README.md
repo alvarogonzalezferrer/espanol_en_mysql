@@ -1,6 +1,10 @@
 # Español en MySQL
 
-Como ingresar correctamente el lenguaje español y sus caracteres especiales a MySQL.
+Como ingresar correctamente los caracteres especiales del lenguaje español a MySQL.
+
+Muchas veces encontramos bases de datos que tienen ingresos como **"Rubén"**, **"Julián"** almacenados como **"RubÃ©n"**, **"JuliÃ¡n"**, ó cosas similares donde los datos están, en apariencia, corruptos.
+
+En este documento vamos a explorar la solución a dicho problema.
 
 ## Donaciones
 
@@ -28,7 +32,7 @@ Registrarte con mis links referidos en:
 
 ## Problemas y solución
 
-Primero que nada, NUNCA modifiquen la base de datos de producción sin antes sacar copias de seguridad! No soy responsable de NADA que les pase con su base de datos, esta información es meramente informativa pero sin garantías de ningún tipo explicitas ó implícitas.
+Primero que nada, NUNCA modifiquen la base de datos de producción sin antes sacar copias de seguridad! No soy responsable de NADA que les pase con su base de datos, **esta información es meramente informativa pero sin garantías de ningún tipo explicitas ó implícitas.**
 
 En bases de datos heredadas, viejas, o mal configuradas, muchas veces nos encontramos con que los acentos, la eñe, y caracteres especiales, se han guardado de manera incorrecta.
 
