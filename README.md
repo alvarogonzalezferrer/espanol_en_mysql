@@ -1,7 +1,30 @@
 # Español en MySQL
 
-Como ingresar correctamente el lenguaje español y sus caracteres especiales a MySQL
-Caracteres especiales en bases de datos MySQL
+Como ingresar correctamente el lenguaje español y sus caracteres especiales a MySQL.
+
+## Donaciones
+
+Hacer este documento lleva mucho tiempo, esfuerzo e investigación.
+
+Si quieres ayudarme a continuar con mi trabajo, podes ayudarme de diferentes maneras.
+
+Registrarte con mis links referidos en:
+
+* Uber Eats: Usa mi código al momento de pagar: **eats-eb0gd1** : http://ubr.to/EatsGiveGet
+
+* Airbnb, obtenes un descuento si te registras con mi código (y yo también) :https://www.airbnb.co.cr/c/alvarog663
+
+* Didi taxi: https://d.didiglobal.com/qMmgDGQszHDw6
+
+* Bitso: https://bitso.com/?ref=vyzyc
+
+**Donar** mediante Bitcoin a mi dirección, todo ayuda, pueden ser centavos, no importa!
+
+**33Xh8YBQsMW8LGrnRR5wgEKXNzoaE5C95Q**
+
+![Wallet 33Xh8YBQsMW8LGrnRR5wgEKXNzoaE5C95Q](btc/wallet.png)
+
+**Muchas gracias por tu donación!**
 
 ## Problemas y solución
 
