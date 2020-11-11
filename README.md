@@ -54,7 +54,9 @@ Por defecto, MySQL usa *latin1* como *charset*, y  *latin1_swedish_ci* como *col
 
 Vi muchas propuestas para resolver este problema, en foros y páginas de consulta a "programadores", un conjunto de muchas ""soluciones"" rebuscadas usando tablas de conversión, con tediosos procesos manuales, con perdida de datos, y dudosas conversiones ambiguas de los caracteres. Ninguna sirve realmente, por eso decidí escribir este articulo.
 
-En realidad, esto es algo incorrecto, no es necesario hacer semejante rodeo para poder adecuar nuestros datos a UTF-8.
+En realidad, las soluciones de los foros son algo incorrecto, no es necesario hacer semejante rodeo manual (que pasa si tenemos una base de datos con millones de registros? los vamos a revisar uno a uno con la tablita del foro?) para poder adecuar nuestros datos.
+
+## Pasos a realizar
 
 1. Hacer **copia de seguridad** de los datos originales, un "dump" de toda la base de datos. Esto es lo MÁS IMPORTANTE, hacer backup y NO hacer experimentos en bases de datos de producción.
 
