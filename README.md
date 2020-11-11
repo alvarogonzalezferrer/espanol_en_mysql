@@ -160,11 +160,16 @@ Para una columna completa, por ejemplo, hacemos:
 
 Donde *tabla* y *columna* serian nuestra tabla y columna corrupta que queremos acomodar.
 
-Opcional pero útil al terminar, ejecutar
+Opcional pero útil al terminar, ejecutar (**solo** tablas con motor  MyISAM, ARCHIVE, ó CSV)
+InnoDB es el motor de almacenamiento predeterminado y más de uso general, y Oracle recomienda usarlo para tablas, excepto para casos de uso especializados: **esto no seria necesario en condiciones normales.**
 
   ```SQL
   # Para cada tabla
+
+  # No usar en InnoDB, no tiene sentido
   REPAIR TABLE tabla;
+
+  # Sirve para InnoDB
   OPTIMIZE TABLE tabla;
   ```
 Se puede hacer para todas las tablas desde la linea de comandos (ingresando el password de root)
