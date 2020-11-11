@@ -60,6 +60,8 @@ En realidad, las soluciones de los foros son algo incorrecto, no es necesario ha
 
 Este documento apunta especialmente a bases de datos que trabajan con datos en español, si queremos usar otros caracteres, por ejemplo de idiomas como japonés, hebreo, árabe, etc debemos cambiar la configuración adecuadamente. Si debemos trabajar con muchos lenguajes combinados a la vez (por ejemplo un sistema global o universal), debemos apuntar a usar todo el sistema (PHP, MySQL, etc) con **utf8mb4**.
 
+Mas info de utf8mb4 -> https://mathiasbynens.be/notes/mysql-utf8mb4
+
 Latin1 charset (iso-8859) es 100% compatible para ser almacenado en un almacén de datos utf8. Todos los caracteres ascii y extended-ascii se almacenarán como de un solo byte.
 
 Yendo del otro lado, de utf8 a Latin1 charset puede o no funcionar. Si hay caracteres de 2 bytes (caracteres más allá de 255 de ascii extendida), no se almacenarán en un almacén de datos de Latin1, <- *ESTE ES EL PROBLEMA QUE NORMALMENTE SUFREN LOS SISTEMAS EN ESPAÑOL*.
@@ -157,6 +159,17 @@ Para una columna completa, por ejemplo, hacemos:
   ```
 
 Donde *tabla* y *columna* serian nuestra tabla y columna corrupta que queremos acomodar.
+
+Opcional pero útil al terminar, ejecutar
+
+  ```SQL
+  # Para cada tabla
+  REPAIR TABLE tabla;
+  OPTIMIZE TABLE tabla;
+  ```
+Se puede hacer para todas las tablas desde la linea de comandos (ingresando el password de root)
+
+  $ mysqlcheck -u root -p --auto-repair --optimize --all-databases
 
 Podemos hacer un pequeño programa que lo haga automáticamente para cada columna de texto de cada tabla de nuestra base de datos, de manera de acomodar toda la base de datos automáticamente.
 
