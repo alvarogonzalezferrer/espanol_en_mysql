@@ -30,6 +30,12 @@ Registrarte con mis links referidos en:
 
 **Muchas gracias por tu donación!**
 
+## ATENCIÓN
+
+LA INFORMACIÓN SE PROPORCIONA "COMO ESTÁ", **SIN GARANTÍA DE NINGÚN TIPO**, EXPRESA O IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A GARANTÍAS DE COMERCIALIZACIÓN, IDONEIDAD PARA UN PROPÓSITO PARTICULAR E INCUMPLIMIENTO.
+
+EN NINGÚN CASO LOS AUTORES Ó PROPIETARIOS DE LOS DERECHOS DE AUTOR SERÁN RESPONSABLES DE NINGÚN RECLAMO, DAÑOS U OTRAS RESPONSABILIDADES, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O CUALQUIER OTRO MOTIVO, DERIVADAS DE, FUERA DE, O EN CONEXIÓN CON LA INFORMACIÓN O SU USO U OTRO TIPO DE ACCIONES CON LA INFORMACIÓN PRESENTADA.
+
 ## Problemas y solución
 
 Primero que nada, NUNCA modifiquen la base de datos de producción sin antes sacar copias de seguridad! No soy responsable de NADA que les pase con su base de datos, **esta información es meramente informativa pero sin garantías de ningún tipo explicitas ó implícitas.**
