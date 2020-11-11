@@ -11,19 +11,19 @@ En bases de datos heredadas, viejas, o mal configuradas, muchas veces nos encont
 
 Entonces, tenemos que datos como **"Rubén Héctor"** en la base de datos están almacenados como **"RubÃ©n HÃ©ctor"**, **"Julián"** como **"JuliÃ¡n"**, ó cosas similares donde los datos están, en apariencia, corruptos.
 
-A veces esos datos se ven correctamente cuando los "traemos" con PHP y los mostramos en la web, pero siguen estando corruptos en la base de datos, y lo que es peor, si hacemos una búsqueda de "Julian", no nos va a traer a "Julián", por que la "collation", es decir el conjunto de reglas que se aplican para comparar caracteres en un charset es incorrecto.
+A veces esos datos se ven correctamente cuando los "traemos" con PHP y los mostramos en la web, pero siguen estando corruptos en la base de datos, y lo que es peor, si hacemos una búsqueda de "Julian", no nos va a traer a "Julián", por que la "*collation*", es decir el conjunto de reglas que se aplican para comparar caracteres en un charset es incorrecto.
 
-El charset es un conjunto de símbolos y codificaciones, es decir, la forma en que la base de datos guarda internamente los datos, y es donde tenemos el problema.
+El "*charset*" es un conjunto de símbolos y codificaciones, es decir, la forma en que la base de datos guarda internamente los datos, y es donde tenemos el problema.
 
-Por defecto, MySQL usa latin1 como charset, y  latin1_swedish_ci como collation. Las bases de datos viejas, heredadas ó mal configuradas estarán en ese juego de carácteres, que no sirve para manejar el español de manera correcta.
+Por defecto, MySQL usa *latin1* como *charset*, y  *latin1_swedish_ci* como *collation*. Las bases de datos viejas, heredadas ó mal configuradas estarán en ese juego de carácteres, que no sirve para manejar el español de manera correcta.
 
 Vi muchas propuestas para resolver este problema, en foros y páginas de consulta a "programadores", un conjunto de muchas ""soluciones"" rebuscadas usando tablas de conversión, con tediosos procesos manuales, con perdida de datos, y dudosas conversiones ambiguas de los caracteres. Ninguna sirve realmente, por eso decidí escribir este articulo.
 
 En realidad, esto es algo incorrecto, no es necesario hacer semejante rodeo para poder adecuar nuestros datos a UTF-8.
 
-1. Hacer copia de seguridad de los datos originales, un "dump" de toda la base de datos. Esto es lo MÁS IMPORTANTE, hacer backup y NO hacer experimentos en bases de datos de producción.
+1. Hacer **copia de seguridad** de los datos originales, un "dump" de toda la base de datos. Esto es lo MÁS IMPORTANTE, hacer backup y NO hacer experimentos en bases de datos de producción.
 
-2. Asegurarse que la base de datos, y todas las tablas están en charset utf8 y collation utf8_spanish_ci, usando algo tipo
+2. Asegurarse que **la base de datos, y todas las tablas están en charset utf8 y collation utf8_spanish_ci**, usando algo tipo
 
 ALTER DATABASE mi_base_datos CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 
@@ -31,7 +31,7 @@ y para cada tabla
 
 ALTER TABLE mi_tabla CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 
-3. Asegurarse que la conexión a nuestra base de datos MySQL, desde PHP, esta siendo en UTF8
+3. Asegurarse que **la conexión a nuestra base de datos MySQL, desde PHP, esta siendo en UTF8**
 
 Hay varias maneras de lograr esto, solo pongo la más compatible incluso con versiones viejas de PHP
 
@@ -56,19 +56,19 @@ $pdo = new PDO("mysql:host=localhost;dbname=world;charset=utf8", 'mi_usuario', '
 // viejo php
 $dbh = new PDO("mysql:$connstr",  $user, $password);
 $dbh->exec("set names utf8");
-4. Asegurarse que nuestras paginas web tienen el meta de UTF-8
+4. Asegurarse que nuestras paginas web tienen el **meta tag de UTF-8**
 
 <meta charset="utf-8">
 
-5. Los archivos php de tu proyecto (los *.php) estén codificados en UTF-8
+5. Los archivos php de tu proyecto estén **codificados en UTF-8**
 
-Por ejemplo en Notepad++ elegimos Codificación > UTF-8 sin BOM y salvamos. Esto sera diferente según el editor de texto que usemos.
+Por ejemplo en Notepad++ elegimos *Codificación > UTF-8 sin BOM* y salvamos. Esto sera diferente según el editor de texto que usemos.
 
-6. Y lo mas complejo, CONVERTIR los datos corruptos de nuestra base de datos a UTF-8
+6. Y lo mas complejo, **CONVERTIR los datos corruptos de nuestra base de datos a UTF-8**
 
 Aquí es donde los "trucos" que encontré en foros hacen agua, o se vuelven extremadamente complicados y propensos a fallar y corromper todavía más los datos, así que les presento esta solución mas elegante.
 
-La manera sencilla es utilizar el mismo poder de MySQL, usando la función CONVERT, que permite conversiones entre charsets.
+La manera sencilla es utilizar el mismo poder de MySQL, usando la función *CONVERT*, que permite conversiones entre charsets.
 
 SELECT CONVERT(BINARY CONVERT('RubÃ©n HÃ©ctor' USING LATIN1) USING UTF8);
 
@@ -82,7 +82,7 @@ Donde tabla y columna serian nuestra tabla y columna corrupta que queremos acomo
 
 Podemos hacer un pequeño programa que lo haga automáticamente para cada columna de texto de cada tabla de nuestra base de datos, de manera de acomodar toda la base de datos automáticamente.
 
-Yo hice uno para un cliente hace poco, que tenia una base de datos heredada toda en latin1 y no le permitía buscar palabras con acentos; ese problema fue solucionado por mi al adaptar correctamente el código PHP, sus paginas web, y también (y especialmente) la base de datos a usar UTF-8.
+Yo hice uno para un cliente hace poco (Nov-2020), que tenia una base de datos heredada toda en latin1 y no le permitía buscar palabras con acentos; ese problema fue solucionado por mi al adaptar correctamente el código PHP, sus paginas web, y también (y especialmente) la base de datos a usar UTF-8.
 
 El código esta en mi GitHub y es fácilmente adaptable para otros problemas similares.
 
@@ -90,9 +90,11 @@ El código esta en mi GitHub y es fácilmente adaptable para otros problemas sim
 
 Para finalizar este artículo, les dejo herramientas muy útiles en nuestras aventuras con bases de datos
 
-1. DBeaver - https://dbeaver.io/
+1. DBeaver -> https://dbeaver.io/
 
-2. MySQL Workbench - https://dev.mysql.com/downloads/workbench/
+2. MySQL Workbench -> https://dev.mysql.com/downloads/workbench/
+
+3. HeidiSQL -> https://www.heidisql.com/download.php
 
 Hoy aprendimos una valiosa lección, el poder del charset!
 
