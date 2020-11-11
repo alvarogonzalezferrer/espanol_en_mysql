@@ -105,7 +105,10 @@ Hay varias maneras de lograr esto, solo pongo la más compatible incluso con ver
 4. Asegurarse que nuestras paginas web tienen el **meta tag de UTF-8**
 
   ```HTML
-  <meta charset="utf-8">
+  <head>
+    <!-- aca el resto de tus cosas de tu pagina-->
+    <meta charset="UTF-8">
+  </head>
   ```
 
 5. Los archivos php de tu proyecto estén **codificados en UTF-8**
