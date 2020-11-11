@@ -90,11 +90,11 @@ El código esta en mi GitHub y es fácilmente adaptable para otros problemas sim
 
 Para finalizar este artículo, les dejo herramientas muy útiles en nuestras aventuras con bases de datos
 
-1. DBeaver -> https://dbeaver.io/
-
-2. MySQL Workbench -> https://dev.mysql.com/downloads/workbench/
-
-3. HeidiSQL -> https://www.heidisql.com/download.php
+Herramienta | Enlace
+------------+---------------------
+DBeaver | https://dbeaver.io/
+MySQL Workbench | https://dev.mysql.com/downloads/workbench/
+HeidiSQL | https://www.heidisql.com/download.php
 
 Hoy aprendimos una valiosa lección, el poder del charset!
 
