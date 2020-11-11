@@ -40,7 +40,7 @@ EN NINGÚN CASO LOS AUTORES Ó PROPIETARIOS DE LOS DERECHOS DE AUTOR SERÁN RESP
 
 ## Problemas y solución
 
-Primero que nada, NUNCA modifiquen la base de datos de producción sin antes sacar copias de seguridad! No soy responsable de NADA que les pase con su base de datos, **esta información es meramente informativa pero sin garantías de ningún tipo explicitas ó implícitas.**
+Primero que nada, **NUNCA** modifiquen la base de datos de producción sin antes sacar copias de seguridad! No soy responsable de **NADA** que les pase con su base de datos, **esta información es meramente informativa y sin garantías de ningún tipo explicitas ó implícitas.**
 
 En bases de datos heredadas, viejas, o mal configuradas, muchas veces nos encontramos con que los acentos, la eñe, y caracteres especiales, se han guardado de manera incorrecta.
 
