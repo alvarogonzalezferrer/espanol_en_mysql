@@ -141,7 +141,7 @@ Donde *tabla* y *columna* serian nuestra tabla y columna corrupta que queremos a
 
 Podemos hacer un pequeño programa que lo haga automáticamente para cada columna de texto de cada tabla de nuestra base de datos, de manera de acomodar toda la base de datos automáticamente.
 
-Yo hice uno para un cliente hace poco (Nov-2020), que tenia una base de datos heredada toda en latin1 y no le permitía buscar palabras con acentos; ese problema fue solucionado por mi al adaptar correctamente el código PHP, sus paginas web, y también (y especialmente) la base de datos a usar UTF-8.
+Yo hice uno para un cliente hace poco (Nov-2020), que tenia una base de datos heredada toda en latin1 y no le permitía buscar palabras con acentos; ese problema lo solucioné al adaptar correctamente el código PHP heredado, sus paginas web, y también (y especialmente) la base de datos a usar UTF-8.
 
 **El código estará proximamente en mi GitHub y es fácilmente adaptable para otros problemas similares.**
 
