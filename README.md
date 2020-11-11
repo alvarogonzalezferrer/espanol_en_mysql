@@ -36,6 +36,8 @@ LA INFORMACIÓN SE PROPORCIONA "COMO ESTÁ", **SIN GARANTÍA DE NINGÚN TIPO**, 
 
 EN NINGÚN CASO LOS AUTORES Ó PROPIETARIOS DE LOS DERECHOS DE AUTOR SERÁN RESPONSABLES DE NINGÚN RECLAMO, DAÑOS U OTRAS RESPONSABILIDADES, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O CUALQUIER OTRO MOTIVO, DERIVADAS DE, FUERA DE, O EN CONEXIÓN CON LA INFORMACIÓN O SU USO U OTRO TIPO DE ACCIONES CON LA INFORMACIÓN PRESENTADA.
 
+**SOLO SE PERMITE EL USO NO COMERCIAL DE ESTA INFORMACIÓN** (*Si te sirve en tu empresa, pagame, no seas ratón...*)
+
 ## Problemas y solución
 
 Primero que nada, NUNCA modifiquen la base de datos de producción sin antes sacar copias de seguridad! No soy responsable de NADA que les pase con su base de datos, **esta información es meramente informativa pero sin garantías de ningún tipo explicitas ó implícitas.**
